@@ -19,6 +19,7 @@ consul-script-install-{{ loop.index }}:
   file.managed:
     - source: {{ script.source }}
     - name: {{ script.name }}
+    - makedirs: true
     - template: jinja
     - user: consul
     - group: consul
