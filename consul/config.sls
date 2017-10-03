@@ -21,8 +21,8 @@ consul-script-install-{{ loop.index }}:
     - name: {{ script.name }}
     - makedirs: true
     - template: jinja
-    - user: consul
-    - group: consul
+    - user: {{ script.user | default('consul') }}
+    - group: {{ script.group | default('consul') }}
     - mode: 0755
 {% endfor %}
 
