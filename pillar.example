@@ -18,7 +18,7 @@ consul:
       - 1.1.1.1
       - 2.2.2.2
 
-  register:
+  services:
     - name: Redis
       checks:
         - script: /usr/local/share/consul/check_redis.py
